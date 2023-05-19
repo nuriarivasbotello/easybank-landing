@@ -1,0 +1,43 @@
+@use "../mixins/responsive.scss" as *;
+
+.icons__container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include responsive (desktop){
+        flex-direction: row;
+        gap: 1.875rem;
+    }
+}
+
+.icons__box{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
+    text-align: center;
+
+    @include responsive (desktop){
+        align-items: start;
+        text-align: left;
+        gap: 2rem;
+    }
+}
+
+.icons__image{
+    width: 72px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include responsive (desktop){
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+.icons__texts{
+    @include responsive (desktop){
+        width: 60%;
+    }
+}

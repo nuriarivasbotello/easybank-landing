@@ -1,1 +1,38 @@
+@use "../mixins/responsive.scss" as *;
 
+.text{
+    font-size: 15px;
+    line-height: 25px;
+    font-weight: var(--font-weight-regular);
+    margin-bottom: 32px;
+    color: var(--color-terciary);
+
+    @include responsive (desktop){
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &--icon{
+        @include responsive (desktop){
+            margin-bottom: 0;
+            font-size: 16px;
+            line-height: 26px;
+        }
+    }
+
+    &--article{
+        margin-bottom: 0;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    &--footer{
+        color: var(--white);
+    }
+}
+
+.text-small{
+    font-size: 10px;
+    font-weight: var(--font-weight-regular);
+    color: var(--color-terciary);
+}

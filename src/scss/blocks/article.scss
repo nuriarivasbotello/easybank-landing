@@ -1,0 +1,25 @@
+@use "../mixins/responsive.scss" as *;
+
+.article{
+    background-color: var(--white);
+    border-radius: 5px;
+    
+    &__text{
+        padding: 24px 32px;
+
+        @include responsive (desktop){
+            padding: 24px;
+        }
+    }
+
+    &__image{
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+
+        @include responsive (desktop){
+            height: 190px;
+        }
+    }
+
+
+}

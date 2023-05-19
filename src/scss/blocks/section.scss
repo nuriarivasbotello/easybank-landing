@@ -1,0 +1,56 @@
+@use "../mixins/responsive.scss" as *;
+
+.section{
+    padding: 64px 24px;
+
+    @include responsive (desktop){
+        padding: 0 165px;
+    }
+
+    &--intro{
+        padding: 0;
+    }
+
+    &--icons{
+    background-color: var(--background-color);
+    text-align: center;
+
+    @include responsive (desktop){
+        text-align: left;
+        padding: 95px 165px;
+    }
+
+    }
+
+    &--articles{
+        background-color: var(--background-color-articles);
+
+        @include responsive (desktop){
+            padding: 80px 165px;
+        }
+    }
+
+    &--footer{
+        padding: 40px 24px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        @include responsive (desktop){
+            padding: 48px 165px;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+        }
+    }
+}
+
+.articles{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include responsive (desktop){
+        flex-direction: row;
+    }
+}

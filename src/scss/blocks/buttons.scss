@@ -1,1 +1,17 @@
+@use "../mixins/responsive.scss" as *;
 
+.button {
+  background-image: var(--color-gradient);
+  padding: 10px 34px;
+  color: var(--white);
+  font-size: 14px;
+  border-radius: 50px;
+
+}
+
+.button--hide-mobile {
+  display: none;
+  @include responsive(desktop) {
+    display: block;
+  }
+}

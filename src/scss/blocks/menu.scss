@@ -1,0 +1,64 @@
+@use "../mixins/responsive.scss" as *;
+@use "../mixins/pseudo.scss" as *;
+@use "../mixins/hover.scss" as *;
+
+.menu {
+  transform: translateY(-1000%);
+  transition: transform 0.5s;
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  padding: 32px 0;
+  border-radius: 4px;
+  background-color: var(--white);
+  text-align: center;
+  box-shadow: 0 0 80px 150px #2d314d;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  gap: 1.5rem;
+  font-size: 18px;
+
+  @include responsive(desktop) {
+    transform: translateY(0);
+    transition: none;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: none;
+    background-color: transparent;
+    font-size: 14px;
+    width: 100%;
+    left: 0;
+    top: -80px;
+    z-index: 10;
+    color: var(--color-terciary);
+  }
+}
+
+.menu--show {
+  transform: translateY(20%);
+}
+
+.toggle-menu {
+  display: block;
+
+  @include responsive(desktop) {
+    display: none;
+  }
+}
+
+.menu__item {
+  position: relative;
+  @include hover {
+    color: var(--color-secundary);
+
+    &::after {
+      @include pseudo(50px, 4px) {
+        background-image: var(--color-gradient);
+        bottom: -15px;
+        left: 0;
+      }
+    }
+  }
+}
